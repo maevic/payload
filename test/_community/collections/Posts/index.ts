@@ -5,6 +5,10 @@ import { mediaSlug } from '../Media'
 export const postsSlug = 'posts'
 
 export const PostsCollection: CollectionConfig = {
+  versions: {
+    drafts: true,
+  },
+  // versions: true,
   fields: [
     {
       name: 'text',
