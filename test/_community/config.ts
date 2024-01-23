@@ -1,3 +1,4 @@
+import nestedDocs from '../../packages/plugin-nested-docs/src'
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'
 import { MediaCollection } from './collections/Media'
@@ -18,6 +19,12 @@ export default buildConfigWithDefaults({
   graphQL: {
     schemaOutputFile: './test/_community/schema.graphql',
   },
+
+  plugins: [
+    nestedDocs({
+      collections: ['posts'],
+    }),
+  ],
 
   onInit: async (payload) => {
     await payload.create({
