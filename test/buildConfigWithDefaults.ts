@@ -10,6 +10,9 @@ import { buildConfig as buildPayloadConfig } from '../packages/payload/src/confi
 import { slateEditor } from '../packages/richtext-slate/src'
 
 // process.env.PAYLOAD_DATABASE = 'postgres'
+process.env.PAYLOAD_DATABASE = 'postgres'
+process.env.POSTGRES_URL = 'postgresql://admin:123@localhost:5432/db'
+// docker run --rm -p 5432:5432 --env POSTGRES_USER=admin --env POSTGRES_PASSWORD=123 --env POSTGRES_DB=db --name test-postgres postgres:16.0
 
 const bundlerAdapters = {
   vite: viteBundler(),
